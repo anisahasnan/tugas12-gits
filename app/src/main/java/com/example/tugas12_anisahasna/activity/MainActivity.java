@@ -1,4 +1,4 @@
-package com.example.tugas12_anisahasna;
+package com.example.tugas12_anisahasna.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.tugas12_anisahasna.R;
 import com.example.tugas12_anisahasna.fragment.FavoriteFragment;
 import com.example.tugas12_anisahasna.fragment.FilmFragment;
 import com.example.tugas12_anisahasna.fragment.TvFragment;

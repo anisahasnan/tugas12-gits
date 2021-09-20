@@ -1,4 +1,4 @@
-package com.example.tugas12_anisahasna;
+package com.example.tugas12_anisahasna.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -13,9 +13,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.BuildConfig;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.tugas12_anisahasna.R;
+import com.example.tugas12_anisahasna.activity.DetailActivity;
 import com.example.tugas12_anisahasna.response.ResultsItem;
 
 import java.util.ArrayList;

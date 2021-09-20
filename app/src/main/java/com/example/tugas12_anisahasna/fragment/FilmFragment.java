@@ -13,7 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.tugas12_anisahasna.R;
-import com.example.tugas12_anisahasna.RVAdapter;
+import com.example.tugas12_anisahasna.adapter.RVAdapter;
 import com.example.tugas12_anisahasna.api.ApiService;
 import com.example.tugas12_anisahasna.api.InitRetrofit;
 import com.example.tugas12_anisahasna.response.MovieResponse;

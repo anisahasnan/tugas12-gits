@@ -1,14 +1,26 @@
 package com.example.tugas12_anisahasna.fragment;
 
+import static com.example.tugas12_anisahasna.App.db;
+
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import com.example.tugas12_anisahasna.adapter.FavMovieAdapter;
+import com.example.tugas12_anisahasna.activity.FavMovieAddActivity;
 import com.example.tugas12_anisahasna.R;
+import com.example.tugas12_anisahasna.database.Movie;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +37,11 @@ public class FavoriteFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    FloatingActionButton addFavBtn;
+    RecyclerView recyclerView;
+    FavMovieAdapter favMovieAdapter;
+    Button deleteBtn;
 
     public FavoriteFragment() {
         // Required empty public constructor
@@ -61,6 +78,30 @@ public class FavoriteFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_favorite, container, false);
+        View view = inflater.inflate(R.layout.fragment_favorite, container, false);
+
+        addFavBtn = view.findViewById(R.id.favAdd);
+
+        addFavBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), FavMovieAddActivity.class);
+            startActivity(intent);
+        });
+
+        recyclerView = view.findViewById(R.id.rcvFavMovie);
+        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
+        ArrayList<Movie> resultsItems = (ArrayList<Movie>) db.movieDao().getAllMovie();
+        favMovieAdapter = new FavMovieAdapter(getActivity(), resultsItems);
+        recyclerView.setAdapter(favMovieAdapter);
+
+//        deleteBtn = view.findViewById(R.id.deleteBtn);
+//
+//        deleteBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                db.movieDao().deleteAllMovie();
+//            }
+//        });
+
+        return view;
     }
 }

@@ -1,4 +1,4 @@
-package com.example.tugas12_anisahasna;
+package com.example.tugas12_anisahasna.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.tugas12_anisahasna.R;
 
 public class DetailActivity extends AppCompatActivity {
 

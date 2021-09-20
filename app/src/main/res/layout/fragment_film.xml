@@ -4,11 +4,11 @@
     android:layout_height="match_parent">
 
     <ImageView
+        android:id="@+id/nowPlaying"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/nowPlaying"
-        android:src="@drawable/nowplaying"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/nowplaying" />
 
     <LinearLayout
         android:layout_width="match_parent"
