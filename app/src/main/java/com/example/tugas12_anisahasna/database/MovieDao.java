@@ -6,6 +6,7 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
 import java.util.List;
+import java.util.Optional;
 
 @Dao
 public interface MovieDao {
@@ -18,5 +19,8 @@ public interface MovieDao {
 
     @Query("DELETE FROM movie")
     void deleteAllMovie();
+
+    @Query("SELECT * FROM movie WHERE title = :title")
+    Movie findMovieByTitle(String title);
 
 }
